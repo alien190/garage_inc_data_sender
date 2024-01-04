@@ -41,7 +41,7 @@ class DataGetter(object):
         mycursor.execute(sql, val)
         return mycursor.fetchall()
     
-    def getQuery(sensor_type: int):
+    def getQuery(self, sensor_type: int):
         if(sensor_type == 0):
             return """SELECT * FROM temperatures 
                     WHERE timestamp >= %s
