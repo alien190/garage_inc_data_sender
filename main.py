@@ -1,7 +1,7 @@
 import yaml
-from .logger import Logger
-from .data_getter import DataGetter
-from .data_sender import DataSender
+from logger import Logger
+from data_getter import DataGetter
+from data_sender import DataSender
 from time import sleep
 
 sql_limit = 25
