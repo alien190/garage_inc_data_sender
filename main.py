@@ -17,7 +17,6 @@ def main():
             db_user = config['db_user']
             db_password = config['db_password']
             remote_host = config['remote_host']
-            sensor_id = config['sensor_id']
             is_debug_enabled = True if config['is_debug_enabled'] == 1 else False
             sleep_seconds = config['sleep_seconds'] if 'sleep_seconds' in config.keys() else sleep_seconds_default
             logger = Logger(filename='data_sender.log', is_debug_enabled=is_debug_enabled)
