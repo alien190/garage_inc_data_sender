@@ -67,6 +67,6 @@ class DataGetter(object):
 
         sql = "SELECT * FROM sensors WHERE is_active = %s"
         
-        val = tuple(1)
+        val = tuple([1])
         mycursor.execute(sql, val)
         return mycursor.fetchall()
