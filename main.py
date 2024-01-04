@@ -20,7 +20,7 @@ def main():
             is_debug_enabled = True if config['is_debug_enabled'] == 1 else False
             sleep_seconds = config['sleep_seconds'] if 'sleep_seconds' in config.keys() else sleep_seconds_default
             logger = Logger(filename='data_sender.log', is_debug_enabled=is_debug_enabled)
-            dataSender = DataSender
+            dataSender = DataSender()
 
             with DataGetter(db_user, db_password, logger) as dataGetter:
                 sensors = dataGetter.getSensors()
@@ -28,7 +28,7 @@ def main():
                     sensor_id = sensor['sensor_id']
                     sensor_type = sensor['sensor_type']
 
-                    last_timestamp = dataSender.request_last_uploaded_timetamp(remote_host, sensor_id, sensor_type)
+                    last_timestamp = dataSender.request_last_uploaded_timestamp(remote_host, sensor_id, sensor_type)
 
                     logger.log_info("sensor_id:" + str(sensor_id) 
                                     + ", sensor_type:" + str(sensor_type) 

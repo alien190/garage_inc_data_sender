@@ -2,7 +2,7 @@ import json
 import requests
 
 class DataSender(object):
-    def request_last_uploaded_timetamp(self, remote_host: str, sensor_id:int, sensor_type:int):
+    def request_last_uploaded_timestamp(self, remote_host: str, sensor_id:int, sensor_type:int):
         request = requests.get("http://" + remote_host + self.get_last_timestamp_endpoint(sensor_type),  
                             params= {'sensor_id': sensor_id})
         if(request.status_code != 200): 
