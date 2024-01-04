@@ -22,12 +22,12 @@ class DataSender(object):
         if(sensor_type == 0):
             return "/get_data/temperatures_last_timestamp/"
         if(sensor_type == 1):
-            return "/get_data/air_flows_last_timestamp/"
+            return "/get_data/airflows_last_timestamp/"
         return ""
     
     def get_update_endpoint(self, sensor_type:int):
         if(sensor_type == 0):
             return "/update_data/temperatures/"
         if(sensor_type == 1):
-            return "/update_data/air_flows/"
+            return "/update_data/airflows/"
         return ""
